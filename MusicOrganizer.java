@@ -57,8 +57,45 @@ public class MusicOrganizer
      */
     public void listAllFiles()
     {
+        int position = 1; //local integer variable
         for(String filename : files) {
-            System.out.println(filename);
+            System.out.println(position +": " +filename);
+            position = position + 1; //increment
+        }
+    }
+    
+    /**
+     * List the name of files matching the given search string.
+     * @param searchString The string to match.
+     * 
+     */
+    public void listMatching(String searchString) {
+        boolean hasMatch = false;
+        for(String filename : files) {
+            if(filename.contains(searchString)) {
+                // A match.
+                System.out.println(filename);
+                hasMatch = true; //tick hasMatch to true
+            }
+        }
+        //checks if hasMatch is false
+        if(hasMatch == false) {
+            // Question 27
+            System.out.println("No filenames matched the searched string");
+        }
+    }
+    
+    /**
+     * Play sample of files matching the given search string.
+     * @param searchString The string to match.
+     * 
+     */
+    public void playMatchSample(String searchString) {
+        for(String filename : files) {
+            if(filename.contains(searchString)) {
+                // A match.
+                player.playSample(searchString); //Question 27
+            }
         }
     }
     
