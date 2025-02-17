@@ -44,17 +44,17 @@ public class Answers{
     }
     
     //Question 32
-    public void sum(int a, int b) {
+    public int sum(int a, int b) {
         int sum = 0;
         while(a < b) {
+            a = a + 1;        //"all between" so increment starts before calc
             sum = sum + a;
-            a = a + 1;
         }
         
         while(b < a) {
+            b = b + 1;        //"all between" so increment stats before calc
             sum = sum + b;
-            b = b + 1;
-        }
+        } return sum;
     }
     
     //Question 33
