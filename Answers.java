@@ -52,7 +52,7 @@ public class Answers{
         }
         
         while(b < a) {
-            b = b + 1;        //"all between" so increment stats before calc
+            b = b + 1;        //"all between" so increment starts before calc
             sum = sum + b;
         } return sum;
     }
